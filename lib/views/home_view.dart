@@ -27,6 +27,11 @@ class _HomeViewState extends State<HomeView> {
                   leading: Icon(Icons.lock),
                   title: Text('Authentication'),
                   onTap: () => context.go('/auth'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.notifications_active),
+                  title: Text('Notification'),
+                  onTap: () => context.go('/notification'),
                 )
               ],
             ));
