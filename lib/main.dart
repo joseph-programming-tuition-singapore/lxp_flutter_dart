@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:lxp_flutter_dart/router.dart';
+import 'package:lxp_flutter_dart/views/home_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -16,13 +18,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
       ),
-      home: const SizedBox(),
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

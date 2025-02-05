@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lxp_flutter_dart/view_models/home_view_model.dart';
 
 class HomeView extends StatefulWidget {
@@ -17,11 +18,18 @@ class _HomeViewState extends State<HomeView> {
       listenable: widget.viewModel,
       builder: (context, _) {
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Home'),
-          ),
-          body: Placeholder(),
-        );
+            appBar: AppBar(
+              title: const Text('Home'),
+            ),
+            body: ListView(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.lock),
+                  title: Text('Authentication'),
+                  onTap: () => context.go('/auth'),
+                )
+              ],
+            ));
       },
     );
   }
