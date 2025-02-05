@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "831081238233",
+    "project_id": "lxp-flutter-dart",
+    "storage_bucket": "lxp-flutter-dart.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831081238233:android:d8a23b7c1ad131733638c8",
+        "android_client_info": {
+          "package_name": "com.example.lxp_flutter_dart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBResvMTAq3SO9e_ahx_mvYNd8E0XsqEsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
