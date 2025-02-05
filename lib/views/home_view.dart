@@ -32,7 +32,12 @@ class _HomeViewState extends State<HomeView> {
                   leading: Icon(Icons.notifications_active),
                   title: Text('Notification'),
                   onTap: () => context.go('/notification'),
-                )
+                ),
+                ListTile(
+                  leading: Icon(Icons.link),
+                  title: Text('API'),
+                  onTap: () => context.go('/api'),
+                ),
               ],
             ));
       },

@@ -24,7 +24,7 @@ class _NotificationViewState extends State<NotificationView> {
           body: Center(
             child: TextButton(
               onPressed: () => widget.viewModel.triggerNotification(),
-              child: Text('Set Notification'),
+              child: Text('Send Notification', style: TextStyle(fontSize: 16)),
             ),
           ),
         );
