@@ -42,6 +42,13 @@ class _FirestoreViewState extends State<FirestoreView> {
                         .readUserDetails('lBkMEBZPIyr05rT5jFEA'),
                     child: Text('Read Profile', style: TextStyle(fontSize: 16)),
                   ),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () => widget.viewModel
+                        .updateUserDetails('Tester C', 'lBkMEBZPIyr05rT5jFEA'),
+                    child:
+                        Text('Update Profile', style: TextStyle(fontSize: 16)),
+                  ),
                   Spacer(flex: 20),
                 ],
               ),

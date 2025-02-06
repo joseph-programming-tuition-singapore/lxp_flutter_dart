@@ -22,4 +22,10 @@ class FirestoreViewModel extends ChangeNotifier {
     _userDetails = userDetails;
     notifyListeners();
   }
+
+  void updateUserDetails(String name, String uid) async {
+    bool success = await _profileRepo.updateProfileName(name, uid);
+    print(success);
+    notifyListeners();
+  }
 }

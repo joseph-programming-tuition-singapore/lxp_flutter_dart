@@ -17,8 +17,9 @@ class ProfileRepo {
   }
 
 // Update
-  bool updateProfile(UserDetails profile) {
-    return true;
+  Future<bool> updateProfileName(String name, String uid) async {
+    final details = await _firestoreService.updateProfile(name, uid);
+    return details != null && details.name == name;
   }
 
 // Delete

@@ -26,4 +26,15 @@ class FirestoreService {
       return null;
     }
   }
+
+  Future<UserDetails?> updateProfile(String name, String uid) async {
+    final db = FirebaseFirestore.instance;
+    await db
+        .collection("users")
+        .doc(uid)
+        .update({name: name}).catchError((error) => print('Failed: $error'));
+    UserDetails? details = await readProfile(uid);
+    print(details?.name);
+    return details;
+  }
 }
