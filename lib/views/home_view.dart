@@ -38,6 +38,11 @@ class _HomeViewState extends State<HomeView> {
                   title: Text('API'),
                   onTap: () => context.go('/api'),
                 ),
+                ListTile(
+                  leading: Icon(Icons.person_outline),
+                  title: Text('Firestore'),
+                  onTap: () => context.go('/firestore'),
+                ),
               ],
             ));
       },
