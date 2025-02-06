@@ -42,4 +42,21 @@ class FirestoreService {
     final db = FirebaseFirestore.instance;
     await db.collection("users").doc(uid).delete();
   }
+
+  Future<List<UserDetails>> readProfileWithFilter(String name) async {
+    final db = FirebaseFirestore.instance;
+    final QuerySnapshot snapshot =
+        await db.collection("users").where('name', isEqualTo: name).get();
+    List<UserDetails> userDetailsList = [];
+    if (snapshot.docs.isNotEmpty) {
+      snapshot.docs.forEach((doc) {
+        final userDoc = doc.data() as Map<String, dynamic>;
+        userDetailsList.add(UserDetails(userDoc['uid'], userDoc['name'],
+            userDoc['email'], userDoc['photoUrl']));
+      });
+      return userDetailsList;
+    } else {
+      return [];
+    }
+  }
 }

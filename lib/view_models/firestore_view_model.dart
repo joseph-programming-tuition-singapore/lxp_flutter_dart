@@ -33,4 +33,12 @@ class FirestoreViewModel extends ChangeNotifier {
     _profileRepo.deleteProfile(uid);
     notifyListeners();
   }
+
+  void filterUserDetails(String name) async {
+    List<UserDetails> userList = await _profileRepo.readProfileWithFilter(name);
+    userList.forEach((element) {
+      print(element.name);
+    });
+    notifyListeners();
+  }
 }

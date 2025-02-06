@@ -26,4 +26,9 @@ class ProfileRepo {
   void deleteProfile(String uid) {
     _firestoreService.deleteProfile(uid);
   }
+
+  // Filter
+  Future<List<UserDetails>> readProfileWithFilter(String name) {
+    return _firestoreService.readProfileWithFilter(name);
+  }
 }

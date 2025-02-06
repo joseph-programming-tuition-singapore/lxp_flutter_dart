@@ -56,6 +56,13 @@ class _FirestoreViewState extends State<FirestoreView> {
                     child:
                         Text('Delete Profile', style: TextStyle(fontSize: 16)),
                   ),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () =>
+                        widget.viewModel.filterUserDetails('Tester C'),
+                    child:
+                        Text('Filter Profile', style: TextStyle(fontSize: 16)),
+                  ),
                   Spacer(flex: 20),
                 ],
               ),
