@@ -37,4 +37,9 @@ class FirestoreService {
     print(details?.name);
     return details;
   }
+
+  void deleteProfile(String uid) async {
+    final db = FirebaseFirestore.instance;
+    await db.collection("users").doc(uid).delete();
+  }
 }

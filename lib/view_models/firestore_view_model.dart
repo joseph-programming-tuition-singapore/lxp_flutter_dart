@@ -28,4 +28,9 @@ class FirestoreViewModel extends ChangeNotifier {
     print(success);
     notifyListeners();
   }
+
+  void deleteUserDetails(String uid) {
+    _profileRepo.deleteProfile(uid);
+    notifyListeners();
+  }
 }

@@ -23,7 +23,7 @@ class ProfileRepo {
   }
 
 // Delete
-  bool deleteProfile(UserDetails profile) {
-    return true;
+  void deleteProfile(String uid) {
+    _firestoreService.deleteProfile(uid);
   }
 }
