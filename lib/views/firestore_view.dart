@@ -36,6 +36,12 @@ class _FirestoreViewState extends State<FirestoreView> {
                     child:
                         Text('Add Dummy Data', style: TextStyle(fontSize: 16)),
                   ),
+                  Spacer(),
+                  TextButton(
+                    onPressed: () => widget.viewModel
+                        .readUserDetails('lBkMEBZPIyr05rT5jFEA'),
+                    child: Text('Read Profile', style: TextStyle(fontSize: 16)),
+                  ),
                   Spacer(flex: 20),
                 ],
               ),

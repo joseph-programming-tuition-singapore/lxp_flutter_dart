@@ -13,4 +13,17 @@ class FirestoreService {
         print('DocumentSnapshot added with ID: ${doc.id}'));
     return true;
   }
+
+  Future<UserDetails?> readProfile(String uid) async {
+    final db = FirebaseFirestore.instance;
+    final DocumentSnapshot doc = await db.collection("users").doc(uid).get();
+    if (doc.exists) {
+      final userDoc = doc.data() as Map<String, dynamic>;
+      return UserDetails(userDoc['uid'], userDoc['name'], userDoc['email'],
+          userDoc['photoUrl']);
+    } else {
+      print('No such document!');
+      return null;
+    }
+  }
 }

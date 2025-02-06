@@ -11,8 +11,9 @@ class ProfileRepo {
   }
 
 // Read
-  UserDetails? readProfile(UserDetails profile) {
-    return null;
+  Future<UserDetails?> readProfile(String uid) async {
+    final profile = await _firestoreService.readProfile(uid);
+    return profile;
   }
 
 // Update

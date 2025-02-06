@@ -15,4 +15,11 @@ class FirestoreViewModel extends ChangeNotifier {
     bool success = _profileRepo.createProfile(userDetails);
     notifyListeners();
   }
+
+  void readUserDetails(String uid) async {
+    UserDetails? userDetails = await _profileRepo.readProfile(uid);
+    print(userDetails?.name);
+    _userDetails = userDetails;
+    notifyListeners();
+  }
 }
