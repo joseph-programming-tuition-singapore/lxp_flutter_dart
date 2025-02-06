@@ -19,8 +19,7 @@ class FirestoreService {
     final DocumentSnapshot doc = await db.collection("users").doc(uid).get();
     if (doc.exists) {
       final userDoc = doc.data() as Map<String, dynamic>;
-      return UserDetails(userDoc['uid'], userDoc['name'], userDoc['email'],
-          userDoc['photoUrl']);
+      return UserDetails.fromJson(userDoc);
     } else {
       print('No such document!');
       return null;
@@ -51,8 +50,7 @@ class FirestoreService {
     if (snapshot.docs.isNotEmpty) {
       snapshot.docs.forEach((doc) {
         final userDoc = doc.data() as Map<String, dynamic>;
-        userDetailsList.add(UserDetails(userDoc['uid'], userDoc['name'],
-            userDoc['email'], userDoc['photoUrl']));
+        userDetailsList.add(UserDetails.fromJson(userDoc));
       });
       return userDetailsList;
     } else {
