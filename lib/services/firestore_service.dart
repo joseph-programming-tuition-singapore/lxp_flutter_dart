@@ -32,7 +32,7 @@ class FirestoreService {
     await db
         .collection("users")
         .doc(uid)
-        .update({name: name}).catchError((error) => print('Failed: $error'));
+        .update({'name': name}).catchError((error) => print('Failed: $error'));
     UserDetails? details = await readProfile(uid);
     print(details?.name);
     return details;
