@@ -43,6 +43,12 @@ class _HomeViewState extends State<HomeView> {
                   title: Text('Firestore'),
                   onTap: () => context.go('/firestore'),
                 ),
+                ListTile(
+                  key: const Key('testing_list_tile'),
+                  leading: Icon(Icons.bug_report),
+                  title: Text('Testing'),
+                  onTap: () => context.go('/testing'),
+                ),
               ],
             ));
       },

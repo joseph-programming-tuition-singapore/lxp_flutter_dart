@@ -9,11 +9,13 @@ import 'package:lxp_flutter_dart/view_models/auth_view_model.dart';
 import 'package:lxp_flutter_dart/view_models/firestore_view_model.dart';
 import 'package:lxp_flutter_dart/view_models/home_view_model.dart';
 import 'package:lxp_flutter_dart/view_models/notification_view_model.dart';
+import 'package:lxp_flutter_dart/view_models/testing_view_model.dart';
 import 'package:lxp_flutter_dart/views/api_view.dart';
 import 'package:lxp_flutter_dart/views/auth_view.dart';
 import 'package:lxp_flutter_dart/views/firestore_view.dart';
 import 'package:lxp_flutter_dart/views/home_view.dart';
 import 'package:lxp_flutter_dart/views/notification_view.dart';
+import 'package:lxp_flutter_dart/views/testing_view.dart';
 
 final GoRouter router = GoRouter(
   routes: <RouteBase>[
@@ -48,6 +50,12 @@ final GoRouter router = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return FirestoreView(
                 viewModel: FirestoreViewModel(ProfileRepo: ProfileRepo()));
+          },
+        ),
+        GoRoute(
+          path: '/testing',
+          builder: (BuildContext context, GoRouterState state) {
+            return TestingView(viewModel: TestingViewModel());
           },
         ),
       ],
